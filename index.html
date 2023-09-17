@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>love tits</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
+
+        canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        body {
+            margin: 0;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente */
+            align-items: center; /* Centraliza horizontalmente */
+        }
+
+        /* Estilo para o contêiner flexível */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Alterado para iniciar a partir do topo */
+            flex-wrap: wrap;
+        }
+
+        /* Estilo para o perfil */
+        .profile {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+            width: 350px; /* Largura ajustada para perfis maiores */
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            position: relative;
+            overflow: hidden;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .profile:hover {
+            transform: translateY(-10px);
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 150px; /* Tamanho do avatar ajustado */
+            height: 150px; /* Tamanho do avatar ajustado */
+            margin: 0 auto 10px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images-ext-1.discordapp.net/external/LfeVOBO1M2-Wxn5FA9dYOkITuBkAtCROG0GC7iPhmFs/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/135626558667882496/f3efa0c14b23732e31b9102aa6bc176b.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            position: relative;
+        }
+
+.crown {
+    position: absolute;
+    top: -25px; /* Posição ajustada para a coroa ficar acima do avatar */
+    left: 62px; /* Posição ajustada para a coroa ficar acima do avatar */
+    right: 0px; /* Ajuste para a direita */
+    width: 25px; /* Largura ajustada para a coroa */
+    height: 25px; /* Altura ajustada para a coroa */
+    z-index: 1;
+}
+
+
+        .profile h1 {
+            font-size: 24px;
+            margin: 10px 0;
+        }
+
+        /* Estilo para as badges */
+        .badges {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .badge {
+            width: 30px;
+            height: 30px;
+            margin: 0 5px;
+        }
+
+        /* Estilo para o link do Instagram */
+        .instagram-link {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fundo animado incorporado -->
+    <iframe src="background.html" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none;"></iframe>
+
+    <!-- Contêiner flexível para os perfis -->
+    <div class="profile-container">
+        <!-- Perfil "light" com a coroa -->
+        <div class="profile">
+            <div class="avatar-container">
+                <div class="avatar"></div>
+                <img src="https://media.discordapp.net/attachments/1146967315490021476/1148040531151163402/image.png" alt="Crown" class="crown">
+            </div>
+            <h1>light</h1>
+            <p>GhƠઽƬGɑɳg</p>
+            <div class="badges">
+                <img src="https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png" alt="Badge 1" class="badge">
+                <img src="https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png" alt="Badge 2" class="badge">
+                <img src="https://cdn.discordapp.com/badge-icons/991c9f39ee33d7537d9f408c3e53141e.png" alt="Badge 3" class="badge">
+            </div>
+            <a class="instagram-link" href="https://www.instagram.com/retzz.wtf" target="_blank"></a>
+        </div>
+      
+        <div class="profile">
+            <div class="avatar-container">
+                <div class="avatar" style="background-image: url('https://images-ext-2.discordapp.net/external/3dEcXYDmDYkGAbzT_1j27-_hYQZcA3qqaf3jSwmUODs/%3Fsize%3D4096/https/cdn.discordapp.com/avatars/1124870179462062170/a289499343a4f9dc48d85075b79ad64f.png');"></div>
+            </div>
+            <h1>Zucky</h1>
+            <p>GhƠઽƬGɑɳg</p>
+            <div class="badges">
+                <img src="https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png" alt="Badge 1" class="badge">
+                <img src="https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png" alt="Badge 2" class="badge">
+            </div>
+            <a class="instagram-link" href="https://www.instagram.com/bdszucky" target="_blank"></a>
+
+    </div>
+      <script>
+  const aboutMeText = "these stars will lose their shine";
+  const aboutMeElement = document.getElementById("about-me");
+  let index = 0;
+  const typingEffect = setInterval(() => {
+    if (index < aboutMeText.length) {
+      aboutMeElement.innerHTML += aboutMeText.charAt(index);
+      index++;
+    } else {
+      clearInterval(typingEffect);
+    }
+  }, 100);
+</script>
+</body>
+</html>
+<script src="cursor.js"></script>
+</head>
+</body>
+</html>
