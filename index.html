@@ -3,158 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>love tits</title>
-    <link rel="icon" type="image/png" href="https://media.discordapp.net/attachments/1118382359721562273/1153072547571716217/188418.png">
+    <title>★★★★★</title>
+<link rel="icon" href="https://media.discordapp.net/attachments/1118382359721562273/1153188630005829672/rockstar-logo.png?width=762&height=701" type="image/png">
+
+  
 
     <style>
         body {
             margin: 0;
+            padding: 0;
             overflow: hidden;
-            background-color: black;
-        }
-
-        canvas {
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        body {
-            margin: 0;
-            text-align: center;
-            color: white;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centraliza verticalmente */
-            align-items: center; /* Centraliza horizontalmente */
-        }
-
-        /* Estilo para o contêiner flexível */
-        .profile-container {
+            width: 100%;
+            height: 100vh;
             display: flex;
             justify-content: center;
-            align-items: flex-start; /* Alterado para iniciar a partir do topo */
-            flex-wrap: wrap;
+            align-items: center;
+            background-color: #36393F; 
         }
 
-        /* Estilo para o perfil */
-        .profile {
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            border-radius: 5px;
-            padding: 20px;
+        video {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .discord-profile {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), #36393F; 
             text-align: center;
-            width: 350px; /* Largura ajustada para perfis maiores */
-            cursor: pointer;
-            transition: transform 0.3s ease-in-out;
-            position: relative;
-            overflow: hidden;
-            margin-right: 20px;
-            margin-bottom: 20px;
-        }
-
-        .profile:hover {
-            transform: translateY(-10px);
-        }
-
-        .avatar-container {
-            position: relative;
-            width: 150px; /* Tamanho do avatar ajustado */
-            height: 150px; /* Tamanho do avatar ajustado */
-            margin: 0 auto 10px;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            color: #FFFFFF; 
         }
 
         .avatar {
-            width: 100%;
-            height: 100%;
-            background-image: url('https://images-ext-1.discordapp.net/external/EF2-aMPi_eyrPDnXDdD5rVrI90MoYitQc9IUPYQpWgg/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/135626558667882496/f39c27b20c4f1e6f4d3e280328ebee39.png?width=702&height=702');
+            width: 100px;
+            height: 100px;
+            background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153162669856141352/e0e2f699ecda73cad531827cab1c4a6b.jpg');
             background-size: cover;
-            background-repeat: no-repeat;
             background-position: center;
             border-radius: 50%;
-            position: relative;
+            margin: 0 auto 20px;
+            transition: transform 0.3s ease; 
         }
 
-        .profile h1 {
+        
+        .avatar:hover {
+            transform: scale(1.1); 
+        }
+
+        .username {
             font-size: 24px;
-            margin: 10px 0;
-        }
-
-        /* Estilo para as badges */
-        .badges {
+            margin: 0 0 10px;
             display: flex;
+            align-items: center;
             justify-content: center;
-            margin-top: 10px;
         }
 
         .badge {
-            width: 30px;
-            height: 30px;
-            margin: 0 5px;
+            width: 20px;
+            height: 20px;
+            background-size: cover;
+            margin-left: 5px;
+            border-radius: 50%;
         }
 
-        /* Estilo para o link do Instagram */
-        .instagram-link {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
+       
+        .social-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .social-button {
+            margin: 0 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #36393F; 
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none; 
+        }
+
+        .social-button:hover {
+            background-color: #4053B3; 
+        }
+
+       
+        .social-icon {
+            font-size: 20px;
+            color: #FFFFFF; 
+        }
+
+    
+        .server-button {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            user-select: none; 
+        }
+
+        .server-button-text {
+            font-size: 18px;
+            color: #FFFFFF;
+            margin-left: 10px;
+            cursor: default;
+        }
+
+  
+        a {
+            text-decoration: none;
+            outline: none;
         }
     </style>
 </head>
 <body>
-    <!-- Fundo animado incorporado -->
-    <iframe src="background.html" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; border: none; pointer-events: none;"></iframe>
-
-    <!-- Contêiner flexível para os perfis -->
-    <div class="profile-container">
-        <!-- Perfil "light" -->
-        <div class="profile">
-            <div class="avatar-container">
-                <div class="avatar"></div>
-            </div>
-            <h1>light</h1>
-          <img src="https://media.discordapp.net/attachments/1118382359721562273/1153077074593071104/pink_anel.png" alt="ana" class="badge">
-        <span>@?</span>
-            <p>GhƠઽƬGɑɳg</p>
-            <div class="badges">
-                <img src="https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png" alt="Badge 1" class="badge">
-                <img src="https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png" alt="Badge 2" class="badge">
-                <img src="https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png" alt="Badge 3" class="badge">
-                <img src="https://cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif" alt="Badge 4" class="badge">
-                <img src="https://cdn.discordapp.com/badge-icons/991c9f39ee33d7537d9f408c3e53141e.png" alt="Badge 5" class="badge">
-                <img src="https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png" alt="Badge 6" class="badge">
-                
-            </div>
-            <a class="instagram-link" href="https://www.instagram.com/retzz.wtf" target="_blank"></a>
+    <video autoplay loop muted>
+        <source src='https://cdn.discordapp.com/attachments/1118382359721562273/1153160359167938600/pokemon-emerald-waterfall-pixel-moewalls-com.mp4' type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    
+    <div class="discord-profile">
+        <div class="avatar"></div>
+        <div class="username">Ligth
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');"></div>
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png');"></div>
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png');"></div>
+            <div class="badge" style="background-image: url('https://cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif');"></div>
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/991c9f39ee33d7537d9f408c3e53141e.png');"></div>
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png');"></div>
         </div>
-      
-        <!-- Perfil "Zucky" -->
-        <div class="profile">
-            <div class="avatar-container">
-                <div class="avatar" style="background-image: url('https://images-ext-1.discordapp.net/external/bUNRcLwAq4kzinBD1dhCEcetrx6k19rRS61N-Agmcxw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/1124870179462062170/58bccdac6e62da0ca31b966329349390.png');"></div>
-            </div>
-            <h1>Zucky</h1>
-          <img src="https://media.discordapp.net/attachments/1118382359721562273/1153077074593071104/pink_anel.png" alt="ana" class="badge">
-        <span>@SV</span>
-            <p>GhƠઽƬGɑɳg</p>
-            <div class="badges">
-                <img src="https://images-ext-2.discordapp.net/external/AGAb6rxerDzjeJhDzXNS5CKgFT0DbGppfnPQiQ_Pfes/https/cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif" alt="Badge 1" class="badge">
-                <img src="https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png" alt="Badge 2" class="badge">
-            </div>
-            <a class="instagram-link" href="https://www.instagram.com/bdszucky" target="_blank"></a>
+        
+   
+        <div class="social-buttons">
+            <a href="https://twitter.com/ligth_r" target="_blank" class="social-button">
+                <i class="fab fa-twitter social-icon"></i>
+            </a>
+            <a href="https://www.instagram.com/retzz.wtf/" target="_blank" class="social-button">
+                <i class="fab fa-instagram social-icon"></i>
+            </a>
+            <a href="https://discord.gg/dripworld" target="_blank" class="social-button">
+                <i class="fab fa-discord social-icon"></i>
+            </a>
+        </div>
+
+
+        <div class="server-button">
+            <div class="server-button-text">GhƠઽƬGɑɳg</div>
         </div>
     </div>
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </body>
-      
-  <audio loop autoplay>
+
+  
+    <audio loop autoplay>
     <source src="https://drive.google.com/file/d/1cjMybNhVlHawrN04PhyQXzg_sYoG69H8" type="audio/mpeg">
 </audio>
 
-    <script src="cursor.js"></script>
-    
+  
 </html>
