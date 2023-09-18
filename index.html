@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>★★★★★</title>
     <link rel="icon" href="https://media.discordapp.net/attachments/1118382359721562273/1153188630005829672/rockstar-logo.png?width=762&height=701" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
         body {
             margin: 0;
@@ -15,7 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #36393F; /* Cor cinza escura do Discord */
+            background-color: #36393F;
         }
 
         video {
@@ -29,28 +30,40 @@
         }
 
         .discord-profile {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent), #36393F; /* Gradiente de sombra + cor cinza do Discord */
             text-align: center;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            color: #FFFFFF; /* Cor do texto */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.4); /* Adicionei a sombra aqui */
+            color: #FFFFFF;
+            position: relative;
+        }
+
+        .profile-cover {
+            width: 100%;
+            height: 150px;
+            background-image: url('https://i.pinimg.com/originals/05/f1/7d/05f17d6e87ad18f65940f896f4cf11a4.gif');
+            background-size: cover;
+            background-position: center;
+            position: absolute;
+            top: -50px; /* Ajustei a posição vertical do banner */
+            left: 0;
+            z-index: -1;
         }
 
         .avatar {
-            width: 120px; /* Aumentei o tamanho do perfil */
-            height: 120px; /* Aumentei o tamanho do perfil */
+            width: 100px;
+            height: 100px;
             background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153210263626067989/8b6b23bd84a3971ff88f339832ca4858.png');
             background-size: cover;
             background-position: center;
             border-radius: 50%;
             margin: 0 auto 20px;
-            transition: transform 0.3s ease; /* Adicionar transição de transformação */
+            transition: transform 0.3s ease, filter 0.3s ease; /* Adicionei uma transição para o efeito de destaque */
         }
 
-        /* Efeito de salto para frente */
         .avatar:hover {
-            transform: scale(1.1); /* Aumentar a escala em 10% ao passar o mouse */
+            transform: scale(1.1);
+            filter: brightness(1.2); /* Ajusta o brilho da imagem ao passar o mouse */
         }
 
         .username {
@@ -69,7 +82,6 @@
             border-radius: 50%;
         }
 
-        /* Estilos dos botões */
         .social-buttons {
             margin-top: 20px;
             display: flex;
@@ -80,49 +92,60 @@
             margin: 0 10px;
             width: 30px;
             height: 30px;
-            background-color: #36393F; /* Cor do perfil (cinza) */
+            background-color: transparent; /* Removi o fundo cinza dos botões da mídia social */
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            text-decoration: none; /* Remover linha azul */
+            text-decoration: none;
         }
 
         .social-button:hover {
-            background-color: #4053B3; /* Cor azul mais escura com efeito de brilho */
+            background-color: #4053B3;
         }
 
-        /* Estilos dos ícones (font Awesome) */
         .social-icon {
             font-size: 20px;
-            color: #FFFFFF; /* Cor do ícone */
+            color: #FFFFFF;
         }
 
-        /* Botão "GhƠઽƬGɑɳg" */
         .server-button {
             margin-top: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 10px;
-            user-select: none; /* Impede a seleção de texto */
+            user-select: none;
         }
 
         .server-button-text {
             font-size: 18px;
             color: #FFFFFF;
             margin-left: 10px;
-            cursor: default; /* Impede o cursor de clique */
+            cursor: default;
         }
 
-        /* Remover a linha azul sob os textos dos botões quando clicados */
         a {
             text-decoration: none;
             outline: none;
         }
+
+        audio {
+            controls autoplay style="background: none; border: none; width: 100%;"
+        }
     </style>
+    <script>
+        function playAudio() {
+            var audio = new Audio("https://drive.google.com/uc?export=download&id=1cjMybNhVlHawrN04PhyQXzg_sYoG69H8");
+            audio.play();
+        }
+
+        window.addEventListener('DOMContentLoaded', (event) => {
+            playAudio();
+        });
+    </script>
 </head>
 <body>
     <video autoplay loop muted>
@@ -131,6 +154,7 @@
     </video>
     
     <div class="discord-profile">
+        <div class="profile-cover"></div>
         <div class="avatar"></div>
         <div class="username">Ligth
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');"></div>
@@ -141,7 +165,6 @@
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png');"></div>
         </div>
         
-        <!-- Barra de botões das redes sociais -->
         <div class="social-buttons">
             <a href="https://twitter.com/ligth_r" target="_blank" class="social-button">
                 <i class="fab fa-twitter social-icon"></i>
@@ -152,22 +175,14 @@
             <a href="https://discord.gg/dripworld" target="_blank" class="social-button">
                 <i class="fab fa-discord social-icon"></i>
             </a>
+            <a href="javascript:void(0);" onclick="playAudio();" class="social-button">
+                <i class="fab fa-spotify social-icon"></i>
+            </a>
         </div>
 
-        <!-- Botão "GhƠઽƬGɑɳg" -->
         <div class="server-button">
             <div class="server-button-text">GhƠઽƬGɑɳg</div>
         </div>
     </div>
-
-    <!-- Importar font Awesome para os ícones -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </body>
-
-  
-    <audio loop autoplay>
-    <source src="https://drive.google.com/file/d/1cjMybNhVlHawrN04PhyQXzg_sYoG69H8" type="audio/mpeg">
-</audio>
-
-  
 </html>
