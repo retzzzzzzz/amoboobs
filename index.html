@@ -33,10 +33,9 @@
             text-align: center;
             padding: 20px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.4); /* Adicionei a sombra aqui */
             color: #FFFFFF;
             position: relative;
-            margin-right: 20px; /* Adicionei uma margem à direita para separar os perfis */
+            margin-right: 20px;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
         }
 
@@ -47,7 +46,7 @@
             background-size: cover;
             background-position: center;
             position: absolute;
-            top: -50px; /* Ajustei a posição vertical do banner */
+            top: -50px;
             left: 0;
             z-index: -1;
         }
@@ -60,12 +59,12 @@
             background-position: center;
             border-radius: 50%;
             margin: 0 auto 20px;
-            transition: transform 0.3s ease, filter 0.3s ease; /* Adicionei uma transição para o efeito de destaque */
+            transition: transform 0.3s ease, filter 0.3s ease;
         }
 
         .avatar:hover {
             transform: scale(1.1);
-            filter: brightness(1.2); /* Ajusta o brilho da imagem ao passar o mouse */
+            filter: brightness(1.2);
         }
 
         .username {
@@ -94,7 +93,7 @@
             margin: 0 10px;
             width: 30px;
             height: 30px;
-            background-color: transparent; /* Removi o fundo cinza dos botões da mídia social */
+            background-color: transparent;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -137,6 +136,18 @@
         audio {
             controls autoplay style="background: none; border: none; width: 100%;"
         }
+
+        /* Adicione um media query para estilizar em dispositivos móveis */
+        @media (max-width: 768px) {
+            .discord-profile {
+                flex-direction: column;
+                margin-right: 0;
+            }
+
+            .discord-profile + .discord-profile {
+                margin-top: 20px; /* Espaço entre os perfis em dispositivos móveis */
+            }
+        }
     </style>
     <script>
         function playAudio() {
@@ -155,6 +166,7 @@
         Your browser does not support the video tag.
     </video>
     
+    <!-- Perfil "Ligth" -->
     <div class="discord-profile">
         <div class="profile-cover"></div>
         <div class="avatar"></div>
@@ -187,36 +199,36 @@
         </div>
     </div>
 
-    <!-- Segundo perfil -->
-<div class="discord-profile">
-    <div class="profile-cover" style="background-image: url('https://i.pinimg.com/originals/74/5c/c9/745cc90fcc688569610f84bc5d2b2fd6.gif');"></div>
-    <div class="avatar" style="background-image: url('https://images-ext-1.discordapp.net/external/bUNRcLwAq4kzinBD1dhCEcetrx6k19rRS61N-Agmcxw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/1124870179462062170/58bccdac6e62da0ca31b966329349390.png');"></div>
-    <div class="username">Zucky
-        <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
-        <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
-        <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
-        <div class="badge" style="background-image: url('https://cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif');"></div>
-        <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png');"></div>
-    </div>
+    <!-- Segundo perfil (Zucky) -->
+    <div class="discord-profile">
+        <div class="profile-cover" style="background-image: url('https://i.pinimg.com/originals/74/5c/c9/745cc90fcc688569610f84bc5d2b2fd6.gif');"></div>
+        <div class="avatar" style="background-image: url('https://images-ext-1.discordapp.net/external/bUNRcLwAq4kzinBD1dhCEcetrx6k19rRS61N-Agmcxw/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/1124870179462062170/58bccdac6e62da0ca31b966329349390.png');"></div>
+        <div class="username">Zucky
+            <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
+            <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
+            <div class="badge" style="background-image: url('https://media.discordapp.net/attachments/1118382359721562273/1153477783822024704/space.png');"></div>
+            <div class="badge" style="background-image: url('https://cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif');"></div>
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/51040c70d4f20a921ad6674ff86fc95c.png');"></div>
+        </div>
 
-    <div class="social-buttons">
-        <a href="https://twitter.com/zuckyprofile" target="_blank" class="social-button">
-            <i class="fab fa-twitter social-icon"></i>
-        </a>
-        <a href="https://www.instagram.com/zuckyprofile/" target="_blank" class="social-button">
-            <i class="fab fa-instagram social-icon"></i>
-        </a>
-        <a href="https://discord.gg/zuckyprofile" target="_blank" class="social-button">
-            <i class="fab fa-discord social-icon"></i>
-        </a>
-        <a href="javascript:void(0);" onclick="playAudio();" class="social-button">
-            <i class="fab fa-spotify social-icon"></i>
-        </a>
-    </div>
+        <div class="social-buttons">
+            <a href="https://twitter.com/zuckyprofile" target="_blank" class="social-button">
+                <i class="fab fa-twitter social-icon"></i>
+            </a>
+            <a href="https://www.instagram.com/zuckyprofile/" target="_blank" class="social-button">
+                <i class="fab fa-instagram social-icon"></i>
+            </a>
+            <a href="https://discord.gg/zuckyprofile" target="_blank" class="social-button">
+                <i class="fab fa-discord social-icon"></i>
+            </a>
+            <a href="javascript:void(0);" onclick="playAudio();" class="social-button">
+                <i class="fab fa-spotify social-icon"></i>
+            </a>
+        </div>
 
-    <div class="server-button">
-        <div class="server-button-text">GhƠઽƬGɑɳg</div>
-    </div>
+        <div class="server-button">
+            <div class="server-button-text">GhƠઽƬGɑɳg</div>
+        </div>
     </div>
 </body>
 </html>
