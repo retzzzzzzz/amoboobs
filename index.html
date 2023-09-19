@@ -10,17 +10,20 @@
         body {
             margin: 0;
             padding: 0;
-            overflow: hidden;
             width: 100%;
             height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             background-color: #36393F;
+            background-image: url('https://i.pinimg.com/originals/39/69/b4/3969b4033a5a5b2f7204876edae50ff4.gif');
+            background-size: cover;
+            background-position: center;
         }
 
         video {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -35,22 +38,8 @@
             border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 0, 0, 0.4);
             color: #FFFFFF;
-            position: relative;
-            margin: 20px;
             max-width: 400px;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
-        }
-
-        .profile-cover {
-            width: 100%;
-            height: 200px;
-            background-image: url('https://i.pinimg.com/originals/39/69/b4/3969b4033a5a5b2f7204876edae50ff4.gif');
-            background-size: cover;
-            background-position: center;
-            position: absolute;
-            top: -100px; 
-            left: 0;
-            z-index: -1;
         }
 
         .avatar {
@@ -138,7 +127,6 @@
         audio {
             controls autoplay style="background: none; border: none; width: 100%;"
         }
-
     </style>
     <script>
         function playAudio() {
@@ -159,7 +147,6 @@
 
     
     <div class="discord-profile">
-        <div class="profile-cover"></div>
         <div class="avatar"></div>
         <div class="username">Ligth
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');"></div>
