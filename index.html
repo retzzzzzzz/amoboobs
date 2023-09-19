@@ -48,20 +48,21 @@
             background-size: cover;
             background-position: center;
             position: absolute;
-            top: -100px; 
+            top: -100px;
             left: 0;
             z-index: -1;
         }
 
         .avatar {
-            width: 150px; 
-            height: 150px; 
+            width: 150px;
+            height: 150px;
             background-image: url('https://images-ext-1.discordapp.net/external/MYfnoKZTl2iESnwFok1ugTXY_grcd8jlafvj8IKQbk4/%3Fsize%3D2048/https/cdn.discordapp.com/avatars/135626558667882496/809ae2e2f22e14cde8c3354315864709.png');
             background-size: cover;
             background-position: center;
             border-radius: 50%;
             margin: 0 auto 20px;
             transition: transform 0.3s ease, filter 0.3s ease;
+            border: 5px solid #444; 
         }
 
         .avatar:hover {
@@ -83,6 +84,37 @@
             background-size: cover;
             margin-left: 5px;
             border-radius: 50%;
+            display: inline-block;
+            position: relative; 
+        }
+
+    
+        .badge[data-tooltip] {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .badge[data-tooltip]::after {
+            content: attr(data-tooltip); 
+            position: absolute;
+            background-color: #444; 
+            color: #fff; 
+            padding: 5px 10px; 
+            border-radius: 5px; 
+            bottom: 30px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            white-space: nowrap; 
+            z-index: 1; 
+            font-size: 12px; 
+            opacity: 0; 
+            transition: opacity 0.3s ease; 
+            font-family: Arial, sans-serif;
+        }
+
+        
+        .badge[data-tooltip]:hover::after {
+            opacity: 1; 
         }
 
         .social-buttons {
@@ -162,12 +194,18 @@
         <div class="profile-cover"></div>
         <div class="avatar"></div>
         <div class="username">Ligth
-            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');"></div>
-            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png');"></div>
-            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png');"></div>
-            <div class="badge" style="background-image: url('https://cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif');"></div>
-            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/991c9f39ee33d7537d9f408c3e53141e.png');"></div>
-            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png');"></div>
+            <!-- Badge 1 -->
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');" data-tooltip="Bravery do HypeSquad"></div>
+            <!-- Badge 2 -->
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png');" data-tooltip="Desenvolvedor(a) ativo(a)"></div>
+            <!-- Badge 3 -->
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png');" data-tooltip="Apoiador Inicial"></div>
+            <!-- Badge 4 -->
+            <div class="badge" style="background-image: url('https://images-ext-2.discordapp.net/external/AGAb6rxerDzjeJhDzXNS5CKgFT0DbGppfnPQiQ_Pfes/https/cdn3.emoji.gg/emojis/1895-subscriber-nitro-animated.gif');" data-tooltip="Assinante desde 12 de jun. de 2022"></div>
+            <!-- Badge 5 -->
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/991c9f39ee33d7537d9f408c3e53141e.png');" data-tooltip="Impulsionando o servidor desde 16 de jul. de 2022"></div>
+            <!-- Badge 6 -->
+            <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png');" data-tooltip="Originalmente ?¿#0484"></div>
         </div>
 
         <div class="social-buttons">
