@@ -44,7 +44,7 @@
         .profile-cover {
             width: 100%;
             height: 200px;
-            background-image: url('https://i.pinimg.com/originals/39/69/b4/3969b4033a5a5b2f7204876edae50ff4.gif');
+            background-image: url('https://i.pinimg.com/originals/02/65/01/026501d682f2a072febf53559e23240a.gif');
             background-size: cover;
             background-position: center;
             position: absolute;
@@ -62,7 +62,7 @@
             border-radius: 50%;
             margin: 0 auto 20px;
             transition: transform 0.3s ease, filter 0.3s ease;
-            border: 5px solid #444; 
+            border: 5px solid #444;
         }
 
         .avatar:hover {
@@ -70,12 +70,21 @@
             filter: brightness(1.2);
         }
 
-        .username {
+       
+        .nick {
+            font-family: 'Arial', sans-serif; 
             font-size: 24px;
-            margin: 0 0 10px;
+            font-weight: bold; 
+            margin: 0 0 5px;
             display: flex;
             align-items: center;
             justify-content: center;
+        }
+
+        .subnick {
+            font-family: 'Arial', sans-serif; 
+            font-size: 16px;
+            opacity: 0.7;
         }
 
         .badge {
@@ -85,36 +94,34 @@
             margin-left: 5px;
             border-radius: 50%;
             display: inline-block;
-            position: relative; 
+            position: relative;
         }
 
-    
         .badge[data-tooltip] {
             position: relative;
             cursor: pointer;
         }
 
         .badge[data-tooltip]::after {
-            content: attr(data-tooltip); 
+            content: attr(data-tooltip);
             position: absolute;
-            background-color: #444; 
-            color: #fff; 
-            padding: 5px 10px; 
-            border-radius: 5px; 
-            bottom: 30px; 
-            left: 50%; 
-            transform: translateX(-50%); 
-            white-space: nowrap; 
-            z-index: 1; 
-            font-size: 12px; 
-            opacity: 0; 
-            transition: opacity 0.3s ease; 
-            font-family: Arial, sans-serif;
+            background-color: #444;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            z-index: 1;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-family: 'Arial', sans-serif;
         }
 
-        
         .badge[data-tooltip]:hover::after {
-            opacity: 1; 
+            opacity: 1;
         }
 
         .social-buttons {
@@ -127,7 +134,7 @@
             margin: 0 10px;
             width: 30px;
             height: 30px;
-            background-color: transparent;
+            background-color: transparent; 
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -138,7 +145,7 @@
         }
 
         .social-button:hover {
-            background-color: #4053B3;
+            background-color: red;
         }
 
         .social-icon {
@@ -162,6 +169,13 @@
             cursor: default;
         }
 
+      
+        .badge,
+        .social-button,
+        .subnick {
+            margin-top: 10px;
+        }
+
         a {
             text-decoration: none;
             outline: none;
@@ -170,8 +184,8 @@
         audio {
             controls autoplay style="background: none; border: none; width: 100%;"
         }
-
     </style>
+
     <script>
         function playAudio() {
             var audio = new Audio("https://drive.google.com/uc?export=download&id=1cjMybNhVlHawrN04PhyQXzg_sYoG69H8");
@@ -185,15 +199,14 @@
 </head>
 <body>
     <video autoplay loop muted>
-        <source src="https://cdn.discordapp.com/attachments/1118382359721562273/1153722010258645012/futuristic-cyber-room-moewalls-com.mp4" type="video/mp4">
+        <source src="https://cdn.discordapp.com/attachments/1118382359721562273/1153844077725483059/neon-night-alley-chongqing-hitman-3-moewalls-com.mp4" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
-    
     <div class="discord-profile">
         <div class="profile-cover"></div>
         <div class="avatar"></div>
-        <div class="username">Ligth
+        <div class="nick">Ligth
             <!-- Badge 1 -->
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');" data-tooltip="Bravery do HypeSquad"></div>
             <!-- Badge 2 -->
@@ -207,6 +220,7 @@
             <!-- Badge 6 -->
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/6de6d34650760ba5551a79732e98ed60.png');" data-tooltip="Originalmente ?¿#0484"></div>
         </div>
+        <div class="nick subnick">d5nㅤㅤㅤㅤㅤㅤㅤㅤㅤ</div>
 
         <div class="social-buttons">
             <a href="https://twitter.com/ligth_r" target="_blank" class="social-button">
@@ -224,9 +238,8 @@
         </div>
 
         <div class="server-button">
-            <div class="server-button-text">ㅤㅤㅤㅤㅤGhƠઽƬGɑɳgㅤㅤㅤㅤㅤ</div>
+            <div class="server-button-text">ㅤㅤㅤㅤGhƠઽƬGɑɳgㅤㅤㅤㅤㅤ</div>
         </div>
     </div>
-
 </body>
 </html>
