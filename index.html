@@ -74,6 +74,10 @@
             cursor: pointer;
         }
 
+        .avatar:focus {
+            outline: none;
+        }
+
         .avatar:hover {
             transform: scale(1.1);
             filter: brightness(1.2);
@@ -216,7 +220,7 @@
 
     <div class="discord-profile">
         <div class="profile-cover"></div>
-        <div class="avatar"></div>
+        <div class="avatar" tabindex="0"></div>
         <div class="nick">Ligth
             <!-- Badge 1 -->
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');" data-tooltip="Bravery do HypeSquad"></div>
@@ -254,3 +258,4 @@
     </div>
 </body>
 </html>
+
