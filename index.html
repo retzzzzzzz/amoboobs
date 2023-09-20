@@ -29,7 +29,7 @@
             z-index: -1;
         }
 
-          @media (max-width: 768px) {
+        @media (max-width: 768px) {
             body {
                 background-image: url('https://i.pinimg.com/originals/de/ae/cb/deaecb99387868f9f5acc2e113b36308.gif');
                 background-size: cover;
@@ -49,7 +49,6 @@
             max-width: 400px;
             background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
         }
-
 
         .profile-cover {
             width: 100%;
@@ -73,6 +72,7 @@
             margin: 0 auto 20px;
             transition: transform 0.3s ease, filter 0.3s ease;
             border: 5px solid #444;
+            cursor: pointer;
         }
 
         .avatar:hover {
@@ -89,12 +89,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            user-select: none;
         }
 
         .subnick {
             font-family: 'Arial', sans-serif; /* Use a mesma fonte das badges */
             font-size: 16px;
             opacity: 0.7;
+            user-select: none;
         }
 
         .badge {
@@ -132,6 +134,37 @@
 
         .badge[data-tooltip]:hover::after {
             opacity: 1;
+        }
+
+        /* Estilo para ocultar a mensagem da badge em dispositivos móveis após 3 segundos */
+        @media (max-width: 768px) {
+            .badge[data-tooltip]:active::after {
+                opacity: 1;
+                transition: opacity 0.3s ease;
+            }
+
+            .badge[data-tooltip]:active::before {
+                content: 'Clicado!';
+                position: absolute;
+                background-color: #444;
+                color: #fff;
+                padding: 5px 10px;
+                border-radius: 5px;
+                bottom: 10px;
+                left: 50%;
+                transform: translateX(-50%);
+                white-space: nowrap;
+                z-index: 1;
+                font-size: 12px;
+                opacity: 1;
+                transition: opacity 0.3s ease;
+                font-family: 'Arial', sans-serif;
+            }
+
+            .badge[data-tooltip]:active::after {
+                opacity: 0;
+                transition: opacity 0.3s ease 3s;
+            }
         }
 
         .social-buttons {
@@ -202,6 +235,49 @@
             audio.play();
         }
 
+        function copyDiscordId() {
+            // ID do Discord que você deseja copiar
+            var discordId = "135626558667882496";
+
+            // Cria um elemento de input para inserir o ID
+            var input = document.createElement("input");
+            input.value = discordId;
+            input.style.position = "absolute";
+            input.style.left = "-9999px";
+            document.body.appendChild(input);
+
+            // Seleciona o texto no input
+            input.select();
+            input.setSelectionRange(0, 99999); // Para dispositivos móveis
+
+            // Copia o texto para a área de transferência
+            document.execCommand("copy");
+
+            // Remove o input após 3 segundos
+            setTimeout(function () {
+                document.body.removeChild(input);
+            }, 3000);
+
+            // Cria um elemento de div para exibir a mensagem de cópia
+            var messageDiv = document.createElement("div");
+            messageDiv.innerHTML = "ID do Discord copiado: " + discordId;
+            messageDiv.style.position = "fixed";
+            messageDiv.style.top = "20px";
+            messageDiv.style.left = "50%";
+            messageDiv.style.transform = "translateX(-50%)";
+            messageDiv.style.backgroundColor = "#444";
+            messageDiv.style.color = "#fff";
+            messageDiv.style.padding = "10px";
+            messageDiv.style.borderRadius = "5px";
+            messageDiv.style.zIndex = "9999";
+            document.body.appendChild(messageDiv);
+
+            // Remove a mensagem após alguns segundos (por exemplo, 3 segundos)
+            setTimeout(function () {
+                document.body.removeChild(messageDiv);
+            }, 3000);
+        }
+
         window.addEventListener('DOMContentLoaded', (event) => {
             playAudio();
         });
@@ -215,7 +291,7 @@
 
     <div class="discord-profile">
         <div class="profile-cover"></div>
-        <div class="avatar"></div>
+        <div class="avatar" id="discord-avatar" onclick="copyDiscordId();"></div>
         <div class="nick">Ligth
             <!-- Badge 1 -->
             <div class="badge" style="background-image: url('https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png');" data-tooltip="Bravery do HypeSquad"></div>
