@@ -12,20 +12,9 @@ video {
   opacity: 50%;
 }
 
-html {
-  font-family: monospace;
-}
 
-*, *::after, *::before {
-  box-sizing: inherit;
-  margin: 0;
-  padding: 0;
-  cursor: crosshair;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+
+
 
 .graffiti {
   font-family: "Graffiti", sans-serif
@@ -64,7 +53,7 @@ html {
 }
 
 body {
-  font-family:monospace!important;
+
   background-color:#000001!important;
   color:#fff!important
 }
